@@ -7,13 +7,14 @@ import Support from '../Support/Support';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
+// import Admin from '../Admin/Admin';
 
 class App extends Component {
 
   componentDidMount() {
     axios({
       method: 'GET',
-      url: ''
+      url: '/feedback'
     }).then(response => {
       console.log(response.data);
     }).catch(error => {
@@ -44,6 +45,7 @@ class App extends Component {
             <Route path="/feelings" component={Feelings} />
             <Route path="/comments" component={Comments} />
             <Route path="/support" component={Support} />
+            {/* <Route path="/admin" component={Admin} /> */}
           </div>
         </Router>
 
