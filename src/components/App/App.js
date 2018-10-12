@@ -9,6 +9,18 @@ import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
 
 class App extends Component {
+
+  componentDidMount() {
+    axios({
+      method: 'GET',
+      url: ''
+    }).then(response => {
+      console.log(response.data);
+    }).catch(error => {
+      alert('Error making GET: ', error);
+    });
+  }
+
   render() {
     return (
       <div className="App">
