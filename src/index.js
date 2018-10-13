@@ -16,8 +16,24 @@ const feedback = (state = [], action) => {
     }
 }
 
+const newFeedback = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_FEELINGS':
+            return{...state, feeling: action.payload};
+        case 'SET_UNDERSTANDING':
+            return {...state, understanding: action.payload};
+        case 'SET_SUPPORT':
+            return {...state, support: action.payload};
+        case 'SET_COMMENTS':
+            return {...state, comments: action.payload};
+        default: 
+            return state;
+    }
+}
+
 const allReducers = combineReducers({
     feedback,
+    newFeedback,
 })
 
 const store = createStore(

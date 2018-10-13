@@ -4,6 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../Header/Header';
+import Home from '../Home/Home';
 import Support from '../Support/Support';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
@@ -12,16 +13,20 @@ import Admin from '../Admin/Admin';
 
 class App extends Component {
 
-  componentDidMount() {
+  getFeedback = () => {
     axios({
       method: 'GET',
       url: '/feedback'
     }).then(response => {
       console.log(response.data);
-      this.props.dispatch({type: 'GET_FEEDBACK', payload: response.data});
+      this.props.dispatch({ type: 'GET_FEEDBACK', payload: response.data });
     }).catch(error => {
       alert('Error making GET: ', error);
     });
+  }
+
+  componentDidMount() {
+    this.getFeedback();
   }
 
   render() {
@@ -31,19 +36,22 @@ class App extends Component {
         <br />
         <Router>
           <div>
-            <Link to={'/'}>Understanding</Link>
+            <Link to={'/'}>Home</Link>
             <br />
             <Link to={'/feelings'}>Feelings</Link>
             <br />
-            <Link to={'/comments'}>Comments</Link>
+            <Link to={'/understanding'}>Understanding</Link>
             <br />
             <Link to={'/support'}>Support</Link>
+            <br />
+            <Link to={'/comments'}>Comments</Link>
           </div>
         </Router>
 
         <Router>
           <div>
-            <Route exact path="/" component={Understanding} />
+            <Route exact path="/" component={Home} />
+            <Route path="/understanding" component={Understanding}/>
             <Route path="/feelings" component={Feelings} />
             <Route path="/comments" component={Comments} />
             <Route path="/support" component={Support} />
