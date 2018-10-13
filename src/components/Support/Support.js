@@ -12,7 +12,8 @@ class Support extends Component {
         })
     }
 
-    handleClick = () => {
+    handleClick = event => {
+        event.preventDefault();
         this.props.dispatch({
             type: 'SET_SUPPORT',
             payload: this.state.support,

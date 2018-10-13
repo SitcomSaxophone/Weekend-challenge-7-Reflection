@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         res.send(results.rows);
     })
     .catch(error => {
-        console.log('Error making GET to database: ', error);
+        console.log('Error making GET to db: ', error);
         res.sendStatus(500);
     })
 });
@@ -25,6 +25,17 @@ router.post(`/`, (req, res) => {
     .catch(error => {
         console.log('Error making POST to db: ', error);
         res.sendStatus(500);
+    });
+})
+
+router.delete('/:id', (req, res) => {
+    pool.query(`DELETE FROM "feedback"
+                WHERE "id"=$1;`, [req.params.id])
+    .then(() => {
+        res.sendStatus(200);
+    })
+    .catch(error => {
+        console.log('Error making DELETE to db: ', error);
     });
 })
 

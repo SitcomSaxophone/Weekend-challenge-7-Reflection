@@ -23,6 +23,7 @@ class Comments extends Component {
             payload: this.state.comments,
         });
         await this.sendFeedback();
+        await this.props.history.push('/success');
        
     }
 
@@ -33,9 +34,6 @@ class Comments extends Component {
             data: this.props.newFeedback
         }).then(response => {
             console.log(response);
-            this.setState({
-                comments: '',
-            });
         }).catch(error => {
             alert('Error making POST: ', error);
         });

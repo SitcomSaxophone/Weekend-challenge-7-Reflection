@@ -12,7 +12,8 @@ class Feelings extends Component {
         });
     }
 
-    handleClick = () => {
+    handleClick = event => {
+        event.preventDefault();
         this.props.dispatch({
             type: 'SET_FEELINGS',
             payload: this.state.feeling,

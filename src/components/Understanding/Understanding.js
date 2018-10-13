@@ -13,7 +13,8 @@ class Understanding extends Component {
         });
     }
 
-    handleClick = () => {
+    handleClick = event => {
+        event.preventDefault();
         this.props.dispatch({
             type: 'SET_UNDERSTANDING',
             payload: this.state.understanding,
