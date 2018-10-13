@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Support from '../Support/Support';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
-// import Admin from '../Admin/Admin';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
       url: '/feedback'
     }).then(response => {
       console.log(response.data);
+      this.props.dispatch({type: 'GET_FEEDBACK', payload: response.data});
     }).catch(error => {
       alert('Error making GET: ', error);
     });
@@ -45,7 +47,7 @@ class App extends Component {
             <Route path="/feelings" component={Feelings} />
             <Route path="/comments" component={Comments} />
             <Route path="/support" component={Support} />
-            {/* <Route path="/admin" component={Admin} /> */}
+            <Route path="/admin" component={Admin} />
           </div>
         </Router>
 
@@ -54,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);

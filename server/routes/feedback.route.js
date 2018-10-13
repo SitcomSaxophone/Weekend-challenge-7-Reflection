@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
     })
     .catch(error => {
         console.log('Error making GET to database: ', error);
+        res.sendStatus(500);
     })
 })
 
