@@ -18,12 +18,13 @@ class Understanding extends Component {
             type: 'SET_UNDERSTANDING',
             payload: this.state.understanding,
         });
+        this.props.history.push('/support');
     }
 
     render() {
         return (
             <div>
-                <input onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?"/>
+                <input autoFocus onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?"/>
 
                 <button onClick={this.handleClick}>Next</button>
             </div>

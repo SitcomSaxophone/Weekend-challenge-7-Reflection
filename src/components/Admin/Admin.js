@@ -3,6 +3,13 @@ import { connect } from 'react-redux';
 
 class Admin extends Component {
 
+    handleDelete = itemToDelete => {
+        this.props.dispatch({
+            type: 'DELETE_FEEDBACK',
+            payload: itemToDelete,
+        });
+    }
+
     render() {
         return (
             <div>
@@ -26,6 +33,7 @@ class Admin extends Component {
                         <td>{item.understanding}</td>
                         <td>{item.support}</td>
                         <td>{item.comments}</td>
+                        <td><button onClick={this.handleDelete}>Delete</button></td>
                     </tr>)}
                 </tbody>
                 <tfoot></tfoot>

@@ -33,6 +33,9 @@ class Comments extends Component {
             data: this.props.newFeedback
         }).then(response => {
             console.log(response);
+            this.setState({
+                comments: '',
+            });
         }).catch(error => {
             alert('Error making POST: ', error);
         });
@@ -41,7 +44,7 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <input onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
+                <input autoFocus value={this.state.comments} onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
                 <button onClick={this.handleClick}>Submit Feedback</button>
             </div>
         )

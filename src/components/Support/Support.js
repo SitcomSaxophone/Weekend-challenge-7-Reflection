@@ -17,12 +17,13 @@ class Support extends Component {
             type: 'SET_SUPPORT',
             payload: this.state.support,
         });
+        this.props.history.push('/comments');
     }
 
     render() {
         return (
             <div>
-                <input onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?" />
+                <input autoFocus onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?" />
 
                 <button onClick={this.handleClick}>Next</button>
             </div>

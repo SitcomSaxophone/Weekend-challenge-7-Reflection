@@ -16,13 +16,14 @@ class Feelings extends Component {
         this.props.dispatch({
             type: 'SET_FEELINGS',
             payload: this.state.feeling,
-        })
+        });
+        this.props.history.push('/understanding');
     }
 
     render() {
         return (
             <div>
-                    <input onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
+                    <input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
                 
                     <button onClick={this.handleClick}>Next</button>
             </div>
