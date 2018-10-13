@@ -10,6 +10,7 @@ import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
 import Admin from '../Admin/Admin';
+import Success from '../Success/Success';
 
 class App extends Component {
 
@@ -55,6 +56,7 @@ class App extends Component {
             <Route path="/feelings" component={Feelings} />
             <Route path="/comments" component={Comments} />
             <Route path="/support" component={Support} />
+            <Route path="/success" component={Success} />
             <Route path="/admin" component={Admin} />
           </div>
         </Router>
