@@ -20,8 +20,7 @@ class Admin extends Component {
         this.getFeedback();
       }
 
-    handleDelete = data => event => {
-        event.preventDefault();
+    handleDelete = data => {
 
         axios({
             method: 'DELETE',
@@ -61,7 +60,7 @@ class Admin extends Component {
                         <td>{item.understanding}</td>
                         <td>{item.support}</td>
                         <td>{item.comments}</td>
-                        <td><button onClick={this.handleDelete(item)}>Delete</button></td>
+                        <td><button onClick={() => this.handleDelete(item)}>Delete</button></td>
                     </tr>)}
                 </tbody>
                 <tfoot></tfoot>
