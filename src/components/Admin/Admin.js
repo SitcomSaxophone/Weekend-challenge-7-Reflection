@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Admin extends Component {
 
-    handleDelete = itemToDelete => {
-        this.props.dispatch({
-            type: 'DELETE_FEEDBACK',
-            payload: itemToDelete,
-        });
+    handleDelete = data => event => {
+        event.preventDefault();
+
+        axios({
+            method: 'DELETE',
+            url: `/feedback/${data.id}`,
+            params: data
+        }).then(() => {
+            // this.props.dispatch({
+        //     type: 'DELETE_FEEDBACK',
+        //     payload: data,
+        // });
+        }).catch(error => {
+            alert('Error making DELETE to server: ', error);
+        }); 
     }
 
     render() {
@@ -33,7 +44,7 @@ class Admin extends Component {
                         <td>{item.understanding}</td>
                         <td>{item.support}</td>
                         <td>{item.comments}</td>
-                        <td><button onClick={this.handleDelete}>Delete</button></td>
+                        <td><button onClick={this.handleDelete(item)}>Delete</button></td>
                     </tr>)}
                 </tbody>
                 <tfoot></tfoot>
