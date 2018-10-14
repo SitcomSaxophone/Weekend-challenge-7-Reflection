@@ -4,6 +4,22 @@ import axios from 'axios';
 
 class Admin extends Component {
 
+    getFeedback = () => {
+        axios({
+          method: 'GET',
+          url: '/feedback'
+        }).then(response => {
+          console.log(response.data);
+          this.props.dispatch({ type: 'GET_FEEDBACK', payload: response.data });
+        }).catch(error => {
+          alert('Error making GET: ', error);
+        });
+      }
+    
+      componentDidMount() {
+        this.getFeedback();
+      }
+
     handleDelete = data => event => {
         event.preventDefault();
 
@@ -12,10 +28,11 @@ class Admin extends Component {
             url: `/feedback/${data.id}`,
             params: data
         }).then(() => {
-            // this.props.dispatch({
+        //     this.props.dispatch({
         //     type: 'DELETE_FEEDBACK',
         //     payload: data,
         // });
+        this.getFeedback();
         }).catch(error => {
             alert('Error making DELETE to server: ', error);
         }); 

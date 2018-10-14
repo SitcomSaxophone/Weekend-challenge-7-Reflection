@@ -11,6 +11,8 @@ const feedback = (state = [], action) => {
     switch (action.type) {
         case 'GET_FEEDBACK':
             return [...state, ...action.payload];
+        // case 'DELETE_FEEDBACK':
+        //     return state.filter(item => item.id === action.payload.id);
         default:
             return state;
     }
