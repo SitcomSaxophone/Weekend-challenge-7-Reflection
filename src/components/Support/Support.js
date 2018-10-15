@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 
@@ -25,13 +28,17 @@ class Support extends Component {
 
     render() {
         return (
-            <div className="inputDiv">
-                <h2>
-                    Support
+            <Card className="inputDiv">
+                <CardContent>
+                    <h2>
+                        Do you feel supported by staff today?
                 </h2>
-                <Input autoFocus onChange={this.handleChange} type="number" placeholder="Do you feel supported by the staff today?" />
-                <Button onClick={this.handleClick}>Next</Button>
-            </div>
+                </CardContent>
+                <CardActions className="buttons">
+                    <Input className="input" autoFocus onChange={this.handleChange} type="number" placeholder="Answer with a number 1 - 5" />
+                    <Button onClick={this.handleClick}>Next</Button>
+                </CardActions>
+            </Card>
         )
     }
 }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 class Feelings extends Component {
     state = {
@@ -25,13 +28,17 @@ class Feelings extends Component {
 
     render() {
         return (
-            <div className="inputDiv">
-                <h2>
-                    Feelings
+            <Card className="inputDiv">
+                <CardContent>
+                    <h2>
+                        How are you feeling today?
                 </h2>
-                    <Input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
+                </CardContent>
+                <CardActions className="buttons">
+                    <Input className="input" autoFocus onChange={this.handleChange} type="number" placeholder="Answer with a number 1 - 5" />
                     <Button onClick={this.handleClick}>Next</Button>
-            </div>
+                </CardActions>
+            </Card>
 
         )
     }
