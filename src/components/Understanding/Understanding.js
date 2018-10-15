@@ -13,17 +13,21 @@ class Understanding extends Component {
     }
 
     handleChange = event => {
+        // change the value on typing into input field
         this.setState({
             understanding: event.target.value,
         });
     }
 
     handleClick = event => {
+        // prevent the entire page from reloading
         event.preventDefault();
+        // dipatch the state value to Redux
         this.props.dispatch({
             type: 'SET_UNDERSTANDING',
             payload: this.state.understanding,
         });
+        // link to the next page
         this.props.history.push('/support');
     }
 
@@ -44,4 +48,5 @@ class Understanding extends Component {
     }
 }
 
+// Communicate with Redux
 export default connect()(Understanding);

@@ -12,17 +12,21 @@ class Support extends Component {
     }
 
     handleChange = event => {
+        // change the value on typing into input field
         this.setState({
             support: event.target.value,
         })
     }
 
     handleClick = event => {
+        // prevent the entire page from reloading
         event.preventDefault();
+        // dipatch the state value to Redux
         this.props.dispatch({
             type: 'SET_SUPPORT',
             payload: this.state.support,
         });
+        // link to the next page
         this.props.history.push('/comments');
     }
 
@@ -43,4 +47,5 @@ class Support extends Component {
     }
 }
 
+// Communicate with Redux
 export default connect()(Support);

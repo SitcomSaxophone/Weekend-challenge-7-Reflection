@@ -9,6 +9,7 @@ class Home extends Component {
                 <h2>
                     Home
             </h2>
+            {/* link to start leaving feedback */}
             <Router>
                 <Link to={'/feelings'}>Start Leaving Feedback</Link>
             </Router>

@@ -9,7 +9,7 @@ class Success extends Component {
                 <h2>
                     Feedback successfully submitted!
                 </h2>
-
+                {/* link to leave new feedback */}
                 <Router>
                     <Link to={'/feelings'}>Leave More Feedback</Link>
                 </Router>

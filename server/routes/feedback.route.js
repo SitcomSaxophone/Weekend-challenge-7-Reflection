@@ -4,6 +4,7 @@ const pool = require('../modules/pool');
 
 
 router.get('/', (req, res) => {
+    // SQL query to GET data from table
     pool.query(`SELECT * FROM "feedback";`)
     .then(results => {
         res.send(results.rows);
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
 
 router.post(`/`, (req, res) => {
     let feedback = req.body;
+    // SQL query to POST data to table
     pool.query(`INSERT INTO "feedback"("feeling", "understanding", "support", "comments")
                 VALUES($1, $2, $3, $4);`, 
                 [feedback.feeling, feedback.understanding, feedback.support, feedback.comments])
@@ -29,6 +31,7 @@ router.post(`/`, (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+    // SQL query to DELETE data from table
     pool.query(`DELETE FROM "feedback"
                 WHERE "id"=$1;`, [req.params.id])
     .then(() => {

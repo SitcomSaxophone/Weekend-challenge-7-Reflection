@@ -8,11 +8,12 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 class Admin extends Component {
 
     getFeedback = () => {
+        // make axios request to server to get feedback from database
         axios({
             method: 'GET',
             url: '/feedback'
         }).then(response => {
-            console.log(response.data);
+            // dispatch the returned data to Redux store
             this.props.dispatch({ type: 'GET_FEEDBACK', payload: response.data });
         }).catch(error => {
             alert('Error making GET: ', error);
@@ -24,13 +25,14 @@ class Admin extends Component {
     }
 
     handleDelete = data => {
+        // prompt the user to commit to deleting before proceeding
         swal({
             title: 'Are you sure you want to delete this feedback?',
             icon: 'warning',
             buttons: true,
             dangerMode: true
         }).then(willDelete => {
-            if (willDelete) {
+            if (willDelete) { // run the axios request for deletion if the user clicks 'OK'  
                 axios({
                     method: 'DELETE',
                     url: `/feedback/${data.id}`,
@@ -43,7 +45,7 @@ class Admin extends Component {
                 swal('Feedback successfully deleted!', {
                     icon: 'success',
                 });
-            } else {
+            } else { // cancel delete request if the user clicks 'Cancel'
                 return;
             }
         })
@@ -88,6 +90,7 @@ class Admin extends Component {
     }
 }
 
-const mapStateToProps = state => ({ feedback: state.feedback });
+// Communicate with Redux
+const mapStateToProps = state => ({ feedback: state.feedback }); 
 
 export default connect(mapStateToProps)(Admin);

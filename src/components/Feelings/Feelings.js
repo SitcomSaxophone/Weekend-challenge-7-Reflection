@@ -12,17 +12,21 @@ class Feelings extends Component {
     }
 
     handleChange = event => {
+        // change the value on typing into input field
         this.setState({
             feeling: event.target.value,
         });
     }
 
     handleClick = event => {
+        // prevent the entire page from reloading
         event.preventDefault();
+        // dipatch the state value to Redux
         this.props.dispatch({
             type: 'SET_FEELINGS',
             payload: this.state.feeling,
         });
+        // lin to the next page
         this.props.history.push('/understanding');
     }
 
@@ -44,4 +48,5 @@ class Feelings extends Component {
     }
 }
 
+// Communicate with Redux
 export default connect()(Feelings);
