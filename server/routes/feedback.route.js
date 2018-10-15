@@ -5,7 +5,8 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
     // SQL query to GET data from table
-    pool.query(`SELECT * FROM "feedback";`)
+    pool.query(`SELECT * FROM "feedback"
+                ORDER BY "id" DESC;`)
     .then(results => {
         res.send(results.rows);
     })
