@@ -60,7 +60,7 @@ class Admin extends Component {
                     <thead>
                         <tr>
                             <th>Feelings</th>
-                            <th>Comprehension</th>
+                            <th>Understanding</th>
                             <th>Support</th>
                             <th>Comments</th>
                             <th>Delete</th>
