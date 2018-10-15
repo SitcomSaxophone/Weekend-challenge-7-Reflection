@@ -28,7 +28,6 @@ class Understanding extends Component {
         return (
             <div>
                 <Input autoFocus onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?"/>
-
                 <Button onClick={this.handleClick}>Next</Button>
             </div>
         )

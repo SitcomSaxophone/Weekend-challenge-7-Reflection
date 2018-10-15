@@ -27,7 +27,6 @@ class Feelings extends Component {
         return (
             <div>
                     <Input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
-                
                     <Button onClick={this.handleClick}>Next</Button>
             </div>
 

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import swal from 'sweetalert';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 class Admin extends Component {
 
@@ -47,38 +49,42 @@ class Admin extends Component {
         })
     }
 
-            render() {
-                return(
-                    <div>
-            <h1>
-                Administrator
+    render() {
+        return (
+            <div>
+                <h1>
+                    Administrator
             </h1>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feelings</th>
-                        <th>Comprehension</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.props.feedback.map(item => <tr key={item.id}>
-                        <td>{item.feeling}</td>
-                        <td>{item.understanding}</td>
-                        <td>{item.support}</td>
-                        <td>{item.comments}</td>
-                        <td><button onClick={() => this.handleDelete(item)}>Delete</button></td>
-                    </tr>)}
-                </tbody>
-                <tfoot></tfoot>
-            </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feelings</th>
+                            <th>Comprehension</th>
+                            <th>Support</th>
+                            <th>Comments</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.feedback.map(item => <tr key={item.id}>
+                            <td>{item.feeling}</td>
+                            <td>{item.understanding}</td>
+                            <td>{item.support}</td>
+                            <td>{item.comments}</td>
+                            <td>
+                                <IconButton onClick={() => this.handleDelete(item)}>
+                                    <DeleteForeverIcon />
+                                </IconButton>
+                            </td>
+                        </tr>)}
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
 
-                    </div >
+            </div >
 
-                )
+        )
     }
 }
 
