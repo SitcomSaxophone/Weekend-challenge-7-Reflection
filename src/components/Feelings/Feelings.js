@@ -36,7 +36,7 @@ class Feelings extends Component {
                 </CardContent>
                 <CardActions className="buttons">
                     <Input className="input" autoFocus onChange={this.handleChange} type="number" placeholder="Answer with a number 1 - 5" />
-                    <Button onClick={this.handleClick}>Next</Button>
+                    <Button variant="outlined" onClick={this.handleClick}>Next</Button>
                 </CardActions>
             </Card>
 

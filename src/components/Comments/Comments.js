@@ -54,7 +54,7 @@ class Comments extends Component {
                 </CardContent>
                 <CardActions className="buttons">
                     <Input className="input" autoFocus value={this.state.comments} onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
-                    <Button onClick={this.handleClick}>Submit Feedback</Button>
+                    <Button variant="outlined" onClick={this.handleClick}>Submit Feedback</Button>
                 </CardActions>
             </Card>
         )
