@@ -43,7 +43,10 @@ class Comments extends Component {
 
     render() {
         return (
-            <div>
+            <div className="inputDiv">
+                <h2>
+                    Comments
+                </h2>
                 <Input autoFocus value={this.state.comments} onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
                 <Button onClick={this.handleClick}>Submit Feedback</Button>
             </div>

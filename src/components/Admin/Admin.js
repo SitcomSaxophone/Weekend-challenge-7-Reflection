@@ -52,9 +52,9 @@ class Admin extends Component {
     render() {
         return (
             <div>
-                <h1>
+                <h2>
                     Administrator
-            </h1>
+            </h2>
 
                 <table>
                     <thead>

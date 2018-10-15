@@ -25,8 +25,11 @@ class Support extends Component {
 
     render() {
         return (
-            <div>
-                <Input autoFocus onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?" />
+            <div className="inputDiv">
+                <h2>
+                    Support
+                </h2>
+                <Input autoFocus onChange={this.handleChange} type="number" placeholder="Do you feel supported by the staff today?" />
                 <Button onClick={this.handleClick}>Next</Button>
             </div>
         )

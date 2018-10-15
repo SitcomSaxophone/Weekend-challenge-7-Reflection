@@ -26,7 +26,10 @@ class Understanding extends Component {
 
     render() {
         return (
-            <div>
+            <div className="inputDiv">
+                <h2>
+                    Understanding
+                </h2>
                 <Input autoFocus onChange={this.handleChange} type="number" placeholder="How well did you understand todays material?"/>
                 <Button onClick={this.handleClick}>Next</Button>
             </div>

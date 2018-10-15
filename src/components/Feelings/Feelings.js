@@ -25,7 +25,10 @@ class Feelings extends Component {
 
     render() {
         return (
-            <div>
+            <div className="inputDiv">
+                <h2>
+                    Feelings
+                </h2>
                     <Input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
                     <Button onClick={this.handleClick}>Next</Button>
             </div>

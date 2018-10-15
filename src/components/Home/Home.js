@@ -6,9 +6,9 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>
+                <h2>
                     Home
-            </h1>
+            </h2>
             <Router>
                 <Link to={'/feelings'}>Start Leaving Feedback</Link>
             </Router>
