@@ -4,18 +4,20 @@
 
 "And my last reminder of the day, which is my last reminder of every day, is...?" - Luke
 
-
- For this assignment, you will be creating a feedback form modeled after Prime's system. Feedback will be collected over 4 views, and when all steps are complete, your app will save the feedback in the database. In a separate view, a user will be able to see all the collected feedback. 
-
 ### SETUP
 
 Create your database and tables using the provided `data.sql` file. Start the server.
 
 ```
-- Update this README.md to describe the project in your own words
-- Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
-- Add the ability to flag an existing feedback entry for further review on the /admin view
-- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
 
+This App allows the user to:
+- Upon arriving at the 'Home' page, provides a link to start the feedback submission process.
+- On the second page the user is prompted to give a value 1-5 about how they are feeling that day. Upon submission the user is sent to page three.
+- On the third page the user is prompted to give a value 1-5 about how well they understood the day's material. Upon submission the user is sent to page four.
+- On the fourth page the user is prompted to give a value 1-5 about how much support they feel they received from staff that day. Upon submission the user 
+is sent to the fifth page.
+On the fifth page the user is prompted to leave any comments that they want. They can leave it blank if they so choose. Upon submission all of the prior information submitted is posted to the database. The user is also taken to the
+'Success' page, letting them know that their feedback was successfully submitted.
+- On the 'Success' page the user is given a link if they want to leave any more feedback. This brings them to back to the starting feedback input page.
+- On the 'Admin' page the administrator can view all of the feedback that has been submitted by users. They also have the option to delete from the database any outdated or unimportant information.
 
-> NOTE: These stretch goals are intended to be completed in order.
