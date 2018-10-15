@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import Support from '../Support/Support';
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <CssBaseline />
         <Header />
 
         <Router>

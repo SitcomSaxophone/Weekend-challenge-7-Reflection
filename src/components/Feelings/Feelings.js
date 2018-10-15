@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
 class Feelings extends Component {
     state = {
@@ -24,9 +26,9 @@ class Feelings extends Component {
     render() {
         return (
             <div>
-                    <input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
+                    <Input autoFocus onChange={this.handleChange} type="number" placeholder="How are you feeling today?" />
                 
-                    <button onClick={this.handleClick}>Next</button>
+                    <Button onClick={this.handleClick}>Next</Button>
             </div>
 
         )

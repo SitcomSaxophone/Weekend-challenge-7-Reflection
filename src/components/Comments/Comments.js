@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
 class Comments extends Component {
 
@@ -42,8 +44,8 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <input autoFocus value={this.state.comments} onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
-                <button onClick={this.handleClick}>Submit Feedback</button>
+                <Input autoFocus value={this.state.comments} onChange={this.handleChange} type="text" placeholder="Leave a comment!" />
+                <Button onClick={this.handleClick}>Submit Feedback</Button>
             </div>
         )
     }
